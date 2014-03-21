@@ -1,0 +1,71 @@
+Some notes that aren't fully in the lib yet (but will be)...
+
+
+----
+
+
+sent to global chat (if in battle + global)
+
+$('.chatbox').first().find('textarea').val('hello').submit()
+
+send to battle chat (if in battle + global)
+
+$('.chatbox').last().find('textarea').val('hello').submit()
+
+use nth move
+
+n = 0
+$('.movemenu').find('button')[n].click()
+
+use move "Recover"
+
+var move_to_use = 'Recover'
+$('.movemenu').find('button').filter(function (i) { return this['value'] == move_to_use }).click();
+
+get type of nth move
+
+n = 0
+$($('.movemenu').find('button')[n]).attr('class').split('-')[1]
+
+get ability description
+
+Tools.getAbility('Prankster')
+
+get item description
+
+BattleItems['abomasite']
+or Tools.getItem('abomasite')
+
+get all moves a pokemon can learn
+
+Tools.getLearnset('Tornadus')
+
+get move power, accuracy, category
+
+Tools.getMove('uproar')
+
+get pokemon type, learnset, weight, stats, abilities, etc (all info)
+
+Tools.getTemplate('Mew')
+
+get type chart for specific type
+
+Tools.getType('Grass').damageTaken
+// values are 0..3, where 0=>normal damage, 1=>super effective, 2=>not very effective, 3=>immune
+
+get your current HP %
+
+$('.hptext').first().text().split('%')[0]
+
+get enemy current HP %
+
+$('.hptext').last().text().split('%')[0]
+
+switch to nth pokemon
+
+n=1
+$('.switchmenu').find('button')[n].click()
+
+switch to "Ninjask"
+
+$('.switchmenu').find('button').filter(function (i) { return $(this).text() == "Ninjask"; }).click();

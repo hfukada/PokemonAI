@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pokemon Showdown AI Library",
+  "description": "Provides a JS interaction library for Pokemon Showdown, for use in writing AI combatants.",
+  "version": "0.1",
+
+  "permissions": [
+    "http://play.pokemonshowdown.com/"
+  ],
+  "content_scripts": [
+    {
+	  "matches": ["http://play.pokemonshowdown.com/*"],
+	  "js": ["jquery-2.1.0.min.js", "interface.js", "ai.js"]
+	}
+  ]
+}
